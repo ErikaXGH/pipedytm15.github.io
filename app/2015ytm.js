@@ -252,7 +252,7 @@ metaColorElm.content = "#000000";
 }
 
 APIbaseURL = "https://piped.wireway.ch/";
-APIbaseURLWatch = "https://inv.nadeko.net/";
+APIbaseURLWatch = "https://piped.wireway.ch/";
 
 playerVideoId = "e";
 playerEmbedURL = "https://invidious.fi/embed/";
