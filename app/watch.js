@@ -25,7 +25,6 @@ function renderWatchPage(parent) {
     const getWatchData = new XMLHttpRequest();
     getWatchData.open('GET', APIbaseURL + 'api/v1/videos/' + playerVideoId, true);
     /* getWatchData.open('GET', APIbaseURLWatch + 'api/v1/videos/' + playerVideoId, true); */
-    getWatchData.setRequestHeader('Authorization','Basic eXRtMTU6SlFKNTNLckxBRVk2RTVxaGdjbTM4UGtTenczYlpYbWs=');
 
     getWatchData.onerror = function(event) {
     console.error("An error occurred with this operation (" + getWatchData.status + ")");

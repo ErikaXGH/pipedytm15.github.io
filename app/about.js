@@ -462,34 +462,6 @@ a few hours later:
 
 29 Nov 2024:
 -YTm15 now uses the "invidious.nerdvpn.de" instance for the API it uses instead of "invidious.kornineq.de"
-
-06 Dec 2024:
--Added subscriptions and account tabs on the homepage (non-pivot) (these tabs are currently placeholders, the actual ones will be created soon)
--Finally fixed the searchbox dropdown for dematerialized/2013 UI
-
-07 Dec 2024:
--Updated the searchbox/input for dematerialized/2013 UI
--added borders to search suggestions, increased font size, and changed font color for 2013 UI
-
-02 Jan 2025 (1st update of 2025!):
--every xmlhttprequest ytm15 makes which uses the invidious nerdvpn api now uses username password authentication and "withcredentials" (at the moment this isn't working to fix the issue with its api rn, but I'll try to figure it out soon)
-
-03 Jan 2025:
--all "withcredentials" enabled requests now use the "setRequestHeader" method instead of "withcredentials"
-
-04 Jan 2025:
--errors now no-longer have a bottom border on 2013 UI
--fixed the menu positioning for menu dropdowns on 2013 ui
-
-07 Jan 2025:
--updated the css for the settings page a bit
--toggle buttons/switches are now holo-themed on the 2013 UI
-
-08 Jan 2025:
--updated the dialog style for the 2013 UI
-
-25 Jan 2025:
--updated errors style for 2013 UI
     </div>
     </div>
     </div>

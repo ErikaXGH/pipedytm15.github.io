@@ -3133,9 +3133,6 @@ ytm15-settings.page-visible {
     background-color: #f3f3f3;
     touch-action: none;
 }
-.shorter~.page-container .settings-categories-container {
-    top: 48px;
-}
 .settings-category {
     transition: background .2s ease-in-out;
 }
@@ -4054,8 +4051,7 @@ html.style-2013 {
     margin-left: 0;
 }
 .style-2013 .ytm15Searchbox {
-    margin-left: 4px;
-    height: 100%;
+    margin-left: 0;
 }
 .style-2013 .searching-overlay {
     background-color: transparent;
@@ -4122,9 +4118,6 @@ html.style-2013 {
 @media (min-aspect-ratio: 13 / 9) and (orientation: landscape), (min-width: 550px) and (orientation: portrait), (min-width: 800px) and (orientation: landscape) {
 .style-2013 .compact-channel .compact-media-item-thumbnail, .style-2013 .compact-channel .compact-media-item-thumbnail.large {
     width: 101px;
-}
-.style-2013 .shorter~.page-container .settings-categories-container {
-    top: 46px;
 }
 }
 .style-2013 .shelf-header {
@@ -4224,9 +4217,6 @@ html.style-2013 {
 .style-2013 .dropdown-text {
     font-size: 1.6rem;
     min-width: 70px;
-}
-.style-2013 ytm15-icon~.dropdown-text {
-    margin-left: 2px;
 }
 .style-2013 .dropdown-select ytm15-icon.dropdown-arrow-icon {
     margin: 0;
@@ -4541,80 +4531,9 @@ html.style-2013 {
 .style-2013 .ytm15-video-owner {
     padding: 11px;
 }
-.style-2013 .searchbox-dropdown {
-    background-color: #f1f1f1;
-    left: 23px;
-    right: 54px;
-    max-height: calc(100vh - 55px);
-    box-shadow: 0px 2px 7px 0 rgba(0, 0, 0, 0.4);
-    border-radius: 2px;
-    max-width: 434px;
-}
 .style-2013 .shorter .searchbox-dropdown {
     top: 46px;
-    max-height: calc(100vh - 55px);
-}
-.style-2013 .searchbox-dropdown .sbdd-list-cont {
-    font-size: 1.8rem;
-    color: #111;
-}
-.style-2013 .searchbox-dropdown a.sbdd-suggestion-link {
-    border-top: 1.2px solid rgba(0, 0, 0, 0.1);
-}
-.style-2013 .searchbox-dropdown .sbdd-item-icon path:nth-of-type(1) {
-    display: initial!important;
-}
-.style-2013 .searchbox-dropdown .sbdd-item-icon path:nth-of-type(2) {
-    display: none;
-}
-.style-2013 .searchbox-form {
-    max-width: 400px;
-    align-items: stretch;
-    position: relative;
-}
-.style-2013 input.searchbox-input {
-    height: 100%;
-    padding: 2px 11px;
-    padding-right: 0;
-}
-.style-2013 input.searchbox-input.title {
-    font-size: 1.8rem;
-}
-.style-2013 input::-webkit-input-placeholder {
-    padding-left: 26px;
-    background-image: url("ic_menu_search.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position-x: 2px;
-}
-.style-2013 .searchbox-input-wrapper::after {
-    content: "";
-    border: 1px solid rgba(0,0,0,0.3);
-    border-top: 0;
-    position: absolute;
-    height: 4px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    pointer-events: none;
-}
-.style-2013 [data-mode="searching"] .searchbox-input-wrapper::after {
-    border-width: 2px;
-    border-color: #009ACE;
-}
-.style-2013 input[type="search" i]::-webkit-search-cancel-button {
-    border-radius: 0;
-    transition: none;
-}
-.style-2013 .ytm15-header[data-mode="searching"]>.not-search-mode {
-    display: flex;
-    flex-grow: 0;
-}
-.style-2013 .ytm15-header[data-mode="searching"]>.not-search-mode .header-title {
-    display: none;
-}
-.style-2013 .ytm15-header[data-mode="searching"]>.not-search-mode .header-button.search-button {
-    display: none;
+    max-height: calc(100vh - 46px);
 }
 .style-2013 .ytm15-video-owner .material-button-container[data-style="BRAND"] .material-button {
     border-color: #ccc;
@@ -4698,10 +4617,6 @@ html.style-2013 {
     background-image: url("spinner_76_outer_holo.png");
     animation-direction: reverse;
 }
-.style-2013 .spinner-container[hidden]::after {
-    margin-top: -45px;
-    margin-left: 0;
-}
 @keyframes spinner-2013 {
 0% {
     transform: rotate(0deg);
@@ -4778,8 +4693,6 @@ html.style-2013 {
 .style-2013 h3#setting-title-subtitle-block-title {
     font-weight: 400;
     font-size: 1.75rem;
-    -webkit-line-clamp: 4;
-    max-height: 6em;
 }
 .style-2013 .setting-title-subtitle-block {
     color: inherit;
@@ -4797,42 +4710,6 @@ html.style-2013 {
 .style-2013 .settings-category {
     font-size: 17.5px;
     padding: 15px 13px;
-}
-.style-2013 .settings-category[aria-pressed="true"] {
-    transition: none;
-    background-color: #068fd4;
-    color: #f1f1f1;
-}
-@media (min-aspect-ratio: 13 / 9) and (orientation: landscape), (min-width: 550px) and (orientation: portrait), (min-width: 800px) and (orientation: landscape) {
-.style-2013 .settings-pages-container {
-    padding: 16px;
-}
-.style-2013 .settings-categories-container {
-    background-color: transparent;
-    border-right: 0;
-    padding: 20px;
-    padding-left: 0px;
-}
-.style-2013 .setting-title-subtitle-block {
-    padding-left: 55px;
-}
-.style-2013 .inner-settings-page-container {
-    border-top: 1.2px solid rgba(0,0,0,0.2);
-}
-.style-2013 .settings-category {
-    transition: none;
-}
-}
-@media (min-width: 800px) and (orientation: landscape) {
-.style-2013 .settings-categories-container {
-    padding-left: 70px;
-    max-width: 430px;
-}
-.style-2013 .settings-pages-container {
-    margin-left: 430px;
-    margin-right: 80px;
-    padding-top: 60px;
-}
 }
 .style-2013 .watchpage-frame-overlay {
     background-color: transparent;
@@ -4908,166 +4785,8 @@ html.style-2013 {
     padding: 10px;
     padding-right: 8px;
 }
-.style-2013 .toggle-button-track {
-    border-radius: 0;
-    background-color: #99999940;
-    height: 22px;
-    width: 80px;
-    top: 0;
-}
-.style-2013 .toggle-button-circle::after {
-    border-radius: 2px;
-    width: 40px;
-    transition: none;
-    box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.4);
-    margin: 1px;
-    width: 38px;
-    height: 20px;
-    box-sizing: border-box;
-    background-color: #99999960;
-    content: "Off";
-    font-size: 13px;
-    text-transform: uppercase;
-    padding: 3px;
-    color: #f1f1f1;
-    border-top: 1px solid rgba(255,255,255,0.2);
-}
-.style-2013 ytm15-toggle-button-container .toggle-button {
-    width: 80px;
-}
-.style-2013 .setting-boolean ytm15-toggle-button-container {
-    flex-shrink: 0;
-}
-.style-2013 .toggle-button-circle {
-    top: 0;
-    left: 0;
-    padding: 0px;
-    overflow: unset;
-    border-radius: 2px;
-    transition: none;
-    width: 40px;
-}
-.style-2013 [aria-pressed=true] .toggle-button-circle {
-    transform: translateX(40px);
-}
-.style-2013 [aria-pressed=true] .toggle-button-circle::after {
-    background-color: #0099cccc;
-    content: "On";
-}
-.style-2013 dialog.ytm15-dialog {
-    box-shadow: 0px 3px 6px 1px rgba(0,0,0,0.4);
-    background-color: #f5f5f5;
-    border-top: 1px solid rgba(0,0,0,0.1);
-    animation: dialog-open-holo .2s;
-}
-.style-2013 .dialog-buttons {
-    border-top: 1px solid rgba(0,0,0,0.15);
-    padding: 0;
-    justify-content: center;
-}
-.style-2013 .dialog-buttons .material-button-container.compact {
-    margin: 0;
-}
-.style-2013 .dialog-buttons .material-button-container {
-    width: 100%;
-    border-radius: 0;
-    border-left: 1px solid rgba(0, 0, 0, 0.15);
-    text-transform: unset;
-    font-size: 1.4rem;
-    color: #111;
-}
-.style-2013 .dialog-buttons .material-button {
-    flex-grow: 1;
-    border-radius: 0;
-    padding: 16px 10px;
-}
-.style-2013 .dialog-buttons .button-text {
-    font-weight: 400;
-}
-.style-2013 .dialog-header {
-    border-bottom: 2px solid #00ade3;
-    padding: 20px 16px;
-    color: #00ade3;
-}
-.style-2013 .ytm15-dialog h2 {
-    font-weight: 400;
-    margin: 0;
-    font-size: 1.9rem;
-}
-.style-2013 .material-radio {
-    flex-direction: row-reverse;
-    border-bottom: 1px solid rgba(0,0,0,0.15);
-    padding: 12px 16px;
-}
-.style-2013 label.radio-label {
-    padding-left: 0;
-    padding-right: 18px;
-}
-.style-2013 .ytm15-options {
-    margin: 0 -16px;
-}
-.style-2013 .dialog-body {
-    padding: 0 16px;
-}
-@keyframes dialog-open-holo {
-0% {
-    opacity: 0;
-    transform: scale(0.9);
-}
-100% {
-    
-}
-}
-@keyframes dialog-close-holo {
-0% {
-
-}
-100% {
-    opacity: 0;
-    transform: scale(0.9);
-}
-}
-.style-2013 .closing dialog.ytm15-dialog {
-    animation: dialog-close-holo .2s forwards;
-}
-.style-2013.lighter-borders *:-webkit-any(.ap-shelf-header, .compact-media-item, .media-channel, .shelf-header, .video-metadata-actions, .comment-simplebox-placeholder, .autonav-bar, .inner-settings-page-container) {
+.style-2013.lighter-borders *:-webkit-any(.ap-shelf-header, .compact-media-item, .media-channel, .shelf-header, .video-metadata-actions, .comment-simplebox-placeholder, .autonav-bar) {
     border-color: rgba(0, 0, 0, 0.1);
-}
-.style-2013 .error-container {
-    border-bottom: 0;
-	animation: none;
-}
-.style-2013 .ytm15-settings-msg {
-    font-weight: 300;
-}
-.style-2013 .error-icon {
-    width: 30px;
-    height: 30px;
-}
-.style-2013 .error-text {
-    font-weight: 400;
-    opacity: .7;
-}
-.style-2013 .error-content ~ .material-button-container {
-    margin-top: 26px;
-    text-transform: none;
-    font-size: 1.6rem;
-    border-radius: 1px;
-}
-.style-2013 .error-content ~ .material-button-container .material-button {
-    padding: 0.65em 0.5em;
-    min-width: 0;
-    border-radius: 1px;
-}
-.style-2013 .error-content ~ .material-button-container .material-button .button-text {
-    font-weight: 400;
-}
-.style-2013 .material-button.has-shadow {
-    box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.6);
-    transition: none;
-}
-.style-2013 .error-content {
-	animation: none;
 }
 
 /* Global dark theme */
@@ -5148,7 +4867,6 @@ html.dark {
     background-color: #282828;
     border-right: 1.2px solid rgba(255, 255, 255, 0.15);
 }
-
 }
 .dark .settings-category {
     border-bottom: 1.2px solid rgba(255, 255, 255, 0.15);
@@ -5591,29 +5309,8 @@ html.style-2013.dark {
 .style-2013.dark .comment-simplebox-placeholder {
     border-bottom-color: rgba(255, 255, 255, 0.2);
 }
-@media (min-aspect-ratio: 13 / 9) and (orientation: landscape), (min-width: 550px) and (orientation: portrait), (min-width: 800px) and (orientation: landscape) {
-.style-2013.dark .settings-categories-container {
-    background-color: transparent;
-    border-right: 0;
-}
-.style-2013.dark .inner-settings-page-container {
-    border-color: rgba(255,255,255,0.2);
-}
-}
-.style-2013.dark.lighter-borders *:-webkit-any(.ap-shelf-header, .compact-media-item, .media-channel, .shelf-header, .video-metadata-actions, .comment-simplebox-placeholder, .autonav-bar, .inner-settings-page-container) {
+.style-2013.dark.lighter-borders *:-webkit-any(.ap-shelf-header, .compact-media-item, .media-channel, .shelf-header, .video-metadata-actions, .comment-simplebox-placeholder, .autonav-bar) {
     border-color: rgba(255, 255, 255, 0.1);
-}
-.style-2013.dark .toggle-button-track {
-    background-color: #333333b0;
-}
-.style-2013.dark [aria-pressed=true] .toggle-button-circle::after {
-    background-color: #0099cccc;
-}
-.style-2013.dark .toggle-button-circle::after {
-    background-color: #99999960;
-}
-.style-2013.dark .error-container {
-    border-bottom: 0;
 }
 
 /* Dark 28 for dematerialized/2013 UI */

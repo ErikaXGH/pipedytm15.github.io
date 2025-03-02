@@ -112,7 +112,6 @@ function channelPage() {
 
     const getChannelDataYT = new XMLHttpRequest();
     getChannelDataYT.open('GET', 'https://yt.lemnoslife.com/noKey/channels?part=snippet,statistics,status&id=' + window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(2, 3)[0], true);
-    getChannelDataYT.setRequestHeader('Authorization','Basic eXRtMTU6SlFKNTNLckxBRVk2RTVxaGdjbTM4UGtTenczYlpYbWs=');
 
     getChannelDataYT.onerror = function(event) {
     console.error("An error occurred with this operation (" + getChannelDataYT.status + ")");
@@ -136,7 +135,6 @@ function channelPage() {
     const getChannelData = new XMLHttpRequest();
     /* getChannelData.open('GET', APIbaseURLWatch + 'api/v1/channels/' + window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(2, 3)[0], true); */
     getChannelData.open('GET', APIbaseURL + 'api/v1/channels/' + window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(2, 3)[0], true);
-    getChannelData.setRequestHeader('Authorization','Basic eXRtMTU6SlFKNTNLckxBRVk2RTVxaGdjbTM4UGtTenczYlpYbWs=');
 
     getChannelData.onerror = function(event) {
     console.error("An error occurred with this operation (" + getChannelData.status + ")");
@@ -409,7 +407,6 @@ function channelPage() {
 
     const getChannelHome = new XMLHttpRequest();
     getChannelHome.open('GET', 'https://yt.lemnoslife.com/noKey/channelSections?channelId=' + window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(2, 3)[0] + '&part=contentDetails,id,snippet', true);
-    getChannelHome.setRequestHeader('Authorization','Basic eXRtMTU6SlFKNTNLckxBRVk2RTVxaGdjbTM4UGtTenczYlpYbWs=');
  
     getChannelHome.onerror = function(event) {
     console.error("An error occurred with this operation (" + getChannelHome.status + ")");
@@ -531,7 +528,6 @@ function channelPage() {
     item.contentDetails.channels.forEach(function(item1){
     const getShelfChannels = new XMLHttpRequest();
     getShelfChannels.open('GET', APIbaseURL + 'api/v1/channels/' + item1, true);
-    getShelfChannels.setRequestHeader('Authorization','Basic eXRtMTU6SlFKNTNLckxBRVk2RTVxaGdjbTM4UGtTenczYlpYbWs=');
  
     getShelfChannels.onerror = function(event) {
     console.error("An error occurred with this operation (" + getShelfChannels.status + ")");
@@ -575,7 +571,6 @@ function channelPage() {
     } else if (item.snippet.type == "singleplaylist") {
     getShelfVideos.open('GET', APIbaseURL + 'api/v1/playlists/' + item.contentDetails.playlists[0], true);
     }
-    getShelfVideos.setRequestHeader('Authorization','Basic eXRtMTU6SlFKNTNLckxBRVk2RTVxaGdjbTM4UGtTenczYlpYbWs=');
 
     var shelfSnippetType = item.snippet.type;
  
@@ -783,7 +778,6 @@ function channelPage() {
     const getChannelVideos = new XMLHttpRequest();
     /* getChannelVideos.open('GET', APIbaseURL + 'api/v1/channels/' + window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(2, 3)[0] + '/videos?sort_by=' + window.location.hash.split("?").slice(1, 2).toString().split("&").slice(0, 1).toString().split("sort").slice(1, 2).toString().split("=").slice(1, 2).toString(), true); */
        getChannelVideos.open('GET', APIbaseURL + 'api/v1/channels/' + window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(2, 3)[0] + '/' + window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(3, 4)[0] + '?sort_by=' + window.location.hash.split("?").slice(1, 2).toString().split("&").slice(0, 1).toString().split("sort").slice(1, 2).toString().split("=").slice(1, 2).toString(), true);
-    getChannelVideos.setRequestHeader('Authorization','Basic eXRtMTU6SlFKNTNLckxBRVk2RTVxaGdjbTM4UGtTenczYlpYbWs=');
  
     getChannelVideos.onerror = function(event) {
     console.error("An error occurred with this operation (" + getChannelVideos.status + ")");
@@ -962,7 +956,6 @@ function channelVideosContin(continuation, contItemParent) {
     const getChannelVideos1 = new XMLHttpRequest();
     /* getChannelVideos1.open('GET', APIbaseURL + 'api/v1/channels/' + window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(2, 3)[0] + '/videos?continuation=' + continuation + '&sort_by=' + window.location.hash.split("?").slice(1, 2).toString().split("&").slice(0, 1).toString().split("sort").slice(1, 2).toString().split("=").slice(1, 2).toString(), true); */
        getChannelVideos1.open('GET', APIbaseURL + 'api/v1/channels/' + window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(2, 3)[0] + `/${window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(3, 4)[0]}?continuation=` + continuation + '&sort_by=' + window.location.hash.split("?").slice(1, 2).toString().split("&").slice(0, 1).toString().split("sort").slice(1, 2).toString().split("=").slice(1, 2).toString(), true);
-    getChannelVideos1.setRequestHeader('Authorization','Basic eXRtMTU6SlFKNTNLckxBRVk2RTVxaGdjbTM4UGtTenczYlpYbWs=');
  
     getChannelVideos1.onerror = function(event) {
     console.error("An error occurred with this operation (" + getChannelVideos1.status + ")");
@@ -1123,7 +1116,6 @@ function channelVideosContin(continuation, contItemParent) {
     if (window.location.hash.split("?").slice(1, 2).toString().split("&").slice(0, 1).toString().split("sort").slice(1, 2).toString().split("=").slice(1, 2).toString() == "") {
     getChannelPlaylists.open('GET', APIbaseURL + 'api/v1/channels/' + window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(2, 3)[0] + '/playlists', true);
     }
-    getChannelPlaylists.setRequestHeader('Authorization','Basic eXRtMTU6SlFKNTNLckxBRVk2RTVxaGdjbTM4UGtTenczYlpYbWs=');
 
     getChannelPlaylists.onerror = function(event) {
     console.error("An error occurred with this operation (" + getChannelPlaylists.status + ")");
@@ -1232,7 +1224,6 @@ function channelVideosContin(continuation, contItemParent) {
 
     const getChannelPlaylists1 = new XMLHttpRequest();
     getChannelPlaylists1.open('GET', APIbaseURL + 'api/v1/channels/' + window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(2, 3)[0] + `/playlists?continuation=` + continuation + '&sort_by=' + window.location.hash.split("?").slice(1, 2).toString().split("&").slice(0, 1).toString().split("sort").slice(1, 2).toString().split("=").slice(1, 2).toString(), true);
-    getChannelPlaylists.setRequestHeader('Authorization','Basic eXRtMTU6SlFKNTNLckxBRVk2RTVxaGdjbTM4UGtTenczYlpYbWs=');
  
     getChannelPlaylists1.onerror = function(event) {
     console.error("An error occurred with this operation (" + getChannelVideos1.status + ")");
@@ -1402,7 +1393,6 @@ function channelVideosContin(continuation, contItemParent) {
     channelShelfMatchesURLId.contentDetails.channels.forEach(function(item1){
     const getShelfChannels = new XMLHttpRequest();
     getShelfChannels.open('GET', APIbaseURL + 'api/v1/channels/' + item1, true);
-    getShelfChannels.setRequestHeader('Authorization','Basic eXRtMTU6SlFKNTNLckxBRVk2RTVxaGdjbTM4UGtTenczYlpYbWs=');
  
     getShelfChannels.onerror = function(event) {
     console.error("An error occurred with this operation (" + getShelfChannels.status + ")");
@@ -1490,7 +1480,6 @@ function channelVideosContin(continuation, contItemParent) {
     item.contentDetails.channels.forEach(function(item1){
     const getShelfChannels = new XMLHttpRequest();
     getShelfChannels.open('GET', APIbaseURL + 'api/v1/channels/' + item1, true);
-    getShelfChannels.setRequestHeader('Authorization','Basic eXRtMTU6SlFKNTNLckxBRVk2RTVxaGdjbTM4UGtTenczYlpYbWs=');
  
     getShelfChannels.onerror = function(event) {
     console.error("An error occurred with this operation (" + getShelfChannels.status + ")");

@@ -251,8 +251,8 @@ metaColorElm.content = "#000000";
 }
 }
 
-APIbaseURL = "https://piped.wireway.ch/";
-APIbaseURLWatch = "https://piped.wireway.ch/";
+APIbaseURL = "https://invidious.nerdvpn.de/";
+APIbaseURLWatch = "https://inv.nadeko.net/";
 
 playerVideoId = "e";
 playerEmbedURL = "https://invidious.fi/embed/";
@@ -318,7 +318,6 @@ Notifs_text_string = "Notifications";
 Library_text_string = "Library";
 AddComment_text_string = "Add a public comment...";
 AddReply_text_string = "Add a public reply..."
-Account_text_string = "Account";
 
 function renderSubscribeBtn(parent) {
     const mtrlBtnCont = document.createElement("div");
@@ -382,9 +381,8 @@ function renderToggleBtn(parent, isDisabled, isPressed, LSItem){
 function renderDropdownSelect(ddText, parent, ddItems, ddisChannelSort) {
     const dropdownSelect = document.createElement("div");
     dropdownSelect.classList.add("dropdown-select", "has-ripple");
-    dropdownSelect.innerHTML = `<div class="dropdown-select-point"></div>`;
     if (ddisChannelSort) {
-    dropdownSelect.innerHTML = `<div class="dropdown-select-point"></div><ytm15-icon class="sort-icon" style="
+    dropdownSelect.innerHTML = `<ytm15-icon class="sort-icon" style="
     width: 26px;
     height: 26px;
     margin: -2px 0;
@@ -414,13 +412,6 @@ function renderDropdownSelect(ddText, parent, ddItems, ddisChannelSort) {
         menuCont.setAttribute("style", `left: ${rect.left - menuCont.offsetWidth + window.scrollX + 11}px; top: ${rect.top + window.scrollY - 10}px; margin: 8px 12px;`);
         if (rect.left - menuCont.offsetWidth + window.scrollX + 11 < 0) {
         menuCont.setAttribute("style", `left: 0px; top: ${rect.top + window.scrollY - 10}px; margin: 8px 12px;`);
-        }
-        if (APP_DEMATERIALIZE_UI_expflag == "true") {
-        const rect = dropdownPoint.getBoundingClientRect();
-        menuCont.setAttribute("style", `left: ${rect.left + window.scrollX - 12}px; top: ${rect.top + window.scrollY + 25}px; margin: 0px 4px;`);
-        if (rect.left + window.scrollX - 12 < 0) {
-        menuCont.setAttribute("style", `left: 0px; top: ${rect.top + window.scrollY + 25}px; margin: 0px 4px;`);
-        }
         }
         }
 
@@ -466,7 +457,6 @@ function renderDropdownSelect(ddText, parent, ddItems, ddisChannelSort) {
     dropdownSelect.appendChild(dropdownSelectText);
     dropdownSelect.innerHTML += `<ytm15-icon class="dropdown-arrow-icon"><svg viewBox="0 0 24 24" fill=""><path d="M7,10L12,15L17,10H7Z"></path></svg></ytm15-icon>`;
     var dropdownArrowIcon = dropdownSelect.querySelector(".dropdown-arrow-icon");
-    var dropdownPoint = dropdownSelect.querySelector(".dropdown-select-point");
     parent.appendChild(dropdownSelect);
 }
 
@@ -495,7 +485,7 @@ dataModeChange();
 renderHeader();
 
 function renderCommentSection(parent, mediaType, cmSource, isCMPage, comntId, comntContinuation){
-    var cmBaseAPIURL = 'https://invidious.nerdvpn.de/api/v1/comments/';
+    var cmBaseAPIURL = 'https://invidious.kornineq.de/api/v1/comments/';
 
     const commentSection = document.createElement("div");
     commentSection.classList.add("comment-section");
@@ -559,7 +549,6 @@ function renderCommentSection(parent, mediaType, cmSource, isCMPage, comntId, co
 
     const getCommentsData = new XMLHttpRequest();
     getCommentsData.open('GET', cmBaseAPIURL + cmSource + "?continuation=" + continuation, true);
-    getCommentsData.setRequestHeader('Authorization','Basic eXRtMTU6SlFKNTNLckxBRVk2RTVxaGdjbTM4UGtTenczYlpYbWs=');
 
     getCommentsData.onerror = function(event) {
     console.error("An error occurred with this operation (" + getCommentsData.status + ")");
@@ -684,7 +673,6 @@ ${pinnedCMBadge}
 
     const getCommentsTitle = new XMLHttpRequest();
     getCommentsTitle.open('GET', APIbaseURL + 'api/v1/channels/' + item.authorId, true);
-    getCommentsTitle.setRequestHeader('Authorization','Basic eXRtMTU6SlFKNTNLckxBRVk2RTVxaGdjbTM4UGtTenczYlpYbWs=');
 
     getCommentsTitle.onerror = function(event) {
     console.error("An error occurred with this operation (" + getCommentsTitle.status + ")");

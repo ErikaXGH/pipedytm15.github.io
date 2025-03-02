@@ -76,41 +76,9 @@ function renderData() {
     tab1.href = "#/trending";
     tab1.innerHTML = `<img class="ytm15-img-icon ytm15-img home-icon" src="ic_tab_trending.png"></img>`
 
-    const tBTabCont2 = document.createElement("div");
-    tBTabCont2.classList.add("tabbar-tab-container", "subscriptions-tab");
-    tBTabCont2.setAttribute('role', 'tab');
-
-    const tab2 = document.createElement("a");
-    tab2.classList.add("tab");
-    tab2.setAttribute('role', 'tab');
-    tab2.setAttribute('aria-label', 'Subscriptions');
-    tab2.setAttribute('aria-selected', 'false');
-    if (window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(1, 2)[0] == "subscriptions") {
-    tab1.setAttribute('aria-selected', 'true');
-    }
-    tab2.href = "#/subscriptions";
-    tab2.innerHTML = `<img class="ytm15-img-icon ytm15-img home-icon" src="ic_tab_subscriptions.png"></img>`
-
-    const tBTabCont3 = document.createElement("div");
-    tBTabCont3.classList.add("tabbar-tab-container", "account-tab");
-    tBTabCont3.setAttribute('role', 'tab');
-
-    const tab3 = document.createElement("a");
-    tab3.classList.add("tab");
-    tab3.setAttribute('role', 'tab');
-    tab3.setAttribute('aria-label', 'Account');
-    tab3.setAttribute('aria-selected', 'false');
-    if (window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(1, 2)[0] == "library") {
-    tab3.setAttribute('aria-selected', 'true');
-    }
-    tab3.href = "#/library";
-    tab3.innerHTML = `<img class="ytm15-img-icon ytm15-img home-icon" src="ic_tab_account.png"></img>`
-
     if (DISABLE_TAB_ICONS_expflag == "true") {
     tab.innerHTML = Home_text_string;
     tab1.innerHTML = Trending_text_string;
-    tab2.innerHTML = Subs_text_string;
-    tab3.innerHTML = Account_text_string;
     }
 
     tabBar.appendChild(tabBarTabs);
@@ -118,10 +86,6 @@ function renderData() {
     tBTabCont.appendChild(tab);
     tabBarTabs.appendChild(tBTabCont1);
     tBTabCont1.appendChild(tab1);
-    tabBarTabs.appendChild(tBTabCont2);
-    tBTabCont2.appendChild(tab2);
-    tabBarTabs.appendChild(tBTabCont3);
-    tBTabCont3.appendChild(tab3);
 
     if (WEB_ENABLE_PIVOT_BAR_expflag !== "true") {
     if (document.querySelector(".tab-bar")) {
@@ -155,12 +119,11 @@ function renderData() {
 
         const getHomeData = new XMLHttpRequest();
         if (window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(1, 2)[0] !== "trending") {
-        getHomeData.open('GET', APIbaseURL + 'api/v1/trending', true, 'ytm15', 'JQJ53KrLAEY6E5qhgcm38PkSzw3bZXmk');
+        getHomeData.open('GET', APIbaseURL + 'api/v1/trending', true);
         } else if (window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(1, 2)[0] == "trending") {
         /* getHomeData.open('GET', APIbaseURL + 'api/v1/trending?type=' + trendType, true); */
         getHomeData.open('GET', APIbaseURL + 'api/v1/trending?type=' + window.location.hash.split("?").slice(1, 2).toString().split("&").slice(0, 1).toString().split("trtype").slice(1, 2).toString().split("=").slice(1, 2).toString(), true);
         }
-        getHomeData.setRequestHeader('Authorization','Basic eXRtMTU6SlFKNTNLckxBRVk2RTVxaGdjbTM4UGtTenczYlpYbWs=');
 
         getHomeData.onerror = function(event) {
         console.error("An error occurred with this operation (" + getHomeData.status + ")");
@@ -289,7 +252,6 @@ function renderData() {
         const getHomeData1 = new XMLHttpRequest();
 
         getHomeData1.open('GET', APIbaseURL + 'api/v1/popular', true);
-        getHomeData1.setRequestHeader('Authorization','Basic eXRtMTU6SlFKNTNLckxBRVk2RTVxaGdjbTM4UGtTenczYlpYbWs=');
 
         getHomeData1.onerror = function(event) {
         console.error("An error occurred with this operation (" + getHomeData1.status + ")");
@@ -422,7 +384,6 @@ function renderData() {
     const getHomeData3 = new XMLHttpRequest();
 
     getHomeData3.open('GET', APIbaseURL + 'api/v1/popular', true);
-    getHomeData3.setRequestHeader('Authorization','Basic eXRtMTU6SlFKNTNLckxBRVk2RTVxaGdjbTM4UGtTenczYlpYbWs=');
 
     getHomeData3.onerror = function(event) {
         console.error("An error occurred with this operation (" + getHomeData3.status + ")");
@@ -619,11 +580,10 @@ function renderDataTrending(homeShelfTrendingType, shelfTitle) {
 
     const getHomeData2 = new XMLHttpRequest();
     if (window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(1, 2)[0] !== "trending") {
-    getHomeData2.open('GET', APIbaseURL + 'api/v1/trending?type=' + homeShelfTrendingType, true, 'ytm15', 'JQJ53KrLAEY6E5qhgcm38PkSzw3bZXmk');
+    getHomeData2.open('GET', APIbaseURL + 'api/v1/trending?type=' + homeShelfTrendingType, true);
     } else if (window.location.hash.split("/").join(',').split("?").join(',').split(',').slice(1, 2)[0] == "trending") {
     getHomeData2.open('GET', APIbaseURL + 'api/v1/trending?type=' + trendType, true);
     }
-    getHomeData2.setRequestHeader('Authorization','Basic eXRtMTU6SlFKNTNLckxBRVk2RTVxaGdjbTM4UGtTenczYlpYbWs=');
 
     getHomeData2.onerror = function(event) {
     console.error("An error occurred with this operation (" + getHomeData2.status + ")");
